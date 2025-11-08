@@ -1,0 +1,43 @@
+﻿# --- Python / Env ---
+__pycache__/
+*.pyc
+.venv*/
+env/
+*.egg-info/
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Data / Outputs / Runs (not tracked) ---
+data/
+data_*/
+data-test/
+data_test/
+data_ui/
+out/
+out_*/
+runs/
+logs/
+*.log
+
+# --- Models / Checkpoints / Big binaries ---
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.npz
+*.zip
+*.7z
+
+# --- Image dumps (ถาจะเกบรป ใช LFS แทน) ---
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+
+# --- Backups ---
+*.bak

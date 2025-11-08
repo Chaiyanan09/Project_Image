@@ -1,0 +1,43 @@
+paths:
+  train_normal: data/train_normal
+  infer_input: data/infer_input
+  label_lookup_root: data/DAGM_2007/DAGM_KaggleUpload/Class10/Test/Label
+  out_dir: out
+  train_normal_Test: data_test/class9_train_normal
+  infer_input_Test: data_test/class9_clean
+  out_dir_Test: out_class9
+  label_lookup_root_Test: ''
+  dagm_root: data/DAGM_2007
+infer:
+  mode: hybrid
+  use_seg_on_unlabeled: false
+  save_overlay_on_unlabeled: false
+  require_seg_for_unlabeled_fail: false
+  min_boxes_unlabeled: 2
+  min_area_px_unlabeled: 200
+model:
+  backbone: resnet18
+  layer: avgpool
+  knn_k: 5
+  feature_size: 512
+  threshold_mode: absolute
+  threshold_q: 0.95
+  threshold_abs: 0.1922130185
+dip:
+  resize_max: 768
+  clahe_clip: 2.0
+  bilateral_d: 5
+  sharpen_amount: 0.7
+  adaptive_block: 35
+  adaptive_C: 5
+  morph_open: 3
+  morph_close: 5
+  min_area_px: 30
+report:
+  save_overlay: true
+  save_boxes: true
+  save_masks: false
+  move_pass_fail: true
+eval:
+  normal_keyword: no_defect
+  mask_suffix: _label
